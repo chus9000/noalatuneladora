@@ -21,15 +21,9 @@
 
     <link href="css/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="css/templatemo-festava-live.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
-    <!--
-
-TemplateMo 583 Festava Live
-
-https://templatemo.com/tm-583-festava-live
-
--->
+    
 </head>
 
 <body>
@@ -61,10 +55,19 @@ https://templatemo.com/tm-583-festava-live
                         <h3 class="text-white">Haz click en el botón para escuchar lo mismo que los vecinos de Comillas los próximos...</h3>
                         <h1 class="text-white mb-5" id="counter"></h1>
                         
-                        <audio src="audio/construction.mp3"></audio>
+                        <!--audio src="audio/construction.mp3"></audio>
                         <button id="button">
                           <i class="custom-icon-play bi-volume-up-fill me-2"></i>
-                        </button>
+                        </button-->
+
+                        
+                        <audio id="track">
+  <source src="audio/construction.mp3" type="audio/mpeg" />
+</audio>
+
+<div id="player-container">
+  <div id="play-pause" class="play">Play</div>
+</div>
 
 
                     </div>
@@ -131,11 +134,11 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-lg-8 col-12 mx-auto">
                         <h2 class="text-center mb-4">El pasado 11 de diciembre...</h2>                      
 
-                        <p>El pasado 11 de diciembre de 2023, los vecinos de Comillas nos despertamos con el sonido de motosierras. Después de meses reclamando que se respetase nuestro parque, el ruido del metal contra la madera acabo con muchas de nuestras ilusiones.
+                        <p>El pasado 11 de diciembre de 2023, los vecinos de Comillas nos despertamos con el sonido de las motosierras. Después de meses reclamando que se respetase nuestro parque, el ruido de la tala acabo con muchas de nuestras ilusiones.
                         </p>
-                        <p>Lo que empezó ese día es solo el comienzo de cuatro años de ruido y polvo que van a sumir nuestro barrio en una estridente nube irrespirable. 
+                        <p>Ese día empezó lo que será nuestra tortura durante los próximos cuatro años. 11.000 camiones cargados de tierra y el constante trabajo de la maquinaria, convertirán nuestor barrio en una estridente nube irrespirable. 
                         </p>
-                        <p>Si como nosotros quieres luchar contra este atropello, comparte con todo el mundo lo que piensas y grita allá donde vayas que <strong>el barrio de Comillas no quiere la tuneladora</strong>.
+                        <p>Si como nosotros quieres luchar contra este atropello, grita allá donde vayas que <strong>el barrio de Comillas no quiere la tuneladora</strong>.
                         </p>
                         <h3 class="text-center mb-4">#Noalatuneladora</h3>
                     </div>
@@ -144,7 +147,7 @@ https://templatemo.com/tm-583-festava-live
             </div>
         </section>
 
-        <section class="contact-section section-padding" id="section_6">
+        <!--section class="contact-section section-padding" id="section_6">
             <div class="container">
                 <div class="row">
 
@@ -162,7 +165,7 @@ https://templatemo.com/tm-583-festava-live
 
                 </div>
             </div>
-        </section>
+        </section-->
     </main>
 
 
@@ -173,7 +176,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> Noalatuneladora.com</p>
+                        <p class="copyright-text">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> #Noalatuneladora</p>
                         <p class="copyright-text">Promovido por <strong>AFA CEIP Perú</strong></p>
                     </div>
                 </div>
@@ -234,26 +237,30 @@ var x = setInterval(function() {
 
 
 
-const button = document.querySelector("#button");
-const icon = document.querySelector("#button > i");
-const audio = document.querySelector("audio");
 
-button.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.volume = 0.2;
-    audio.play();
-    icon.classList.remove('custom-icon-play bi-volume-up-fill me-2');
-    icon.classList.add('custom-icon-play bi-volume-mute-fill me-2');
-    
-  } else {
-    audio.pause();
-    icon.classList.remove('bi-custom-icon-play volume-mute-fill me-2');
-    icon.classList.add('bi-custom-icon-play volume-up-fill me-2');
-  }
-  button.classList.add("fade");
+
+
+
+var track = document.getElementById('track');
+
+var controlBtn = document.getElementById('play-pause');
+
+function playPause() {
+    if (track.paused) {
+        track.play();
+        //controlBtn.textContent = "Pause";
+        controlBtn.className = "pause";
+    } else { 
+        track.pause();
+         //controlBtn.textContent = "Play";
+        controlBtn.className = "play";
+    }
+}
+
+controlBtn.addEventListener("click", playPause);
+track.addEventListener("ended", function() {
+  controlBtn.className = "play";
 });
-
-
 
 
 
