@@ -89,7 +89,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Qué está pasando</a>
+                            <a class="nav-link click-scroll" href="#section_1">Está pasando</a>
                         </li>
 
                         <li class="nav-item">
@@ -97,7 +97,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Quiénes somos</a>
+                            <a class="nav-link click-scroll" href="#section_3">Quiénes</a>
                         </li>
 
                         <li class="nav-item">
@@ -124,19 +124,13 @@
                         <h3 class="text-white">Haz click en el botón para escuchar lo que se oye en Comillas durante los próximos...</h3>
                         <h1 class="text-white mb-5" id="counter"></h1>
                         
-                        <!--audio src="audio/construction.mp3"></audio>
-                        <button id="button">
-                          <i class="custom-icon-play bi-volume-up-fill me-2"></i>
-                        </button-->
+                        <audio id="track" loop>
+                          <source src="audio/construction.mp3" type="audio/mpeg" />
+                        </audio>
 
-                        
-                        <audio id="track">
-  <source src="audio/construction.mp3" type="audio/mpeg" />
-</audio>
-
-<div id="player-container">
-  <div id="play-pause" class="play">Play</div>
-</div>
+                        <div id="player-container">
+                          <div id="play-pause" class="play">Play</div>
+                        </div>
 
 
                     </div>
