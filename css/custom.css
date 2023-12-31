@@ -377,7 +377,6 @@ strong {
   top: 0;
   right: 0;
   left: 0;
-  margin-top: 51px;
 }
 
 .sticky-wrapper.is-sticky .navbar {
@@ -405,7 +404,7 @@ strong {
 .navbar-nav .nav-link {
   display: inline-block;
   color: var(--white-color);
-  font-size: var(--p-font-size);
+  font-size: 16px;
   font-weight: var(--font-weight-normal);
   position: relative;
   padding-top: 15px;
@@ -642,7 +641,7 @@ strong {
 }
 
 .artists-hover p a {
-  color: var(--secondary-color);
+  color: var(--white-color);
 }
 
 .artists-hover p a:hover {
